@@ -1,4 +1,9 @@
+# PoC of chrome extension archive downloader
+
 Download and print download numbers for extensions in the chrome store.
+
+## Usage
+
 
 ```
 $ python download_numbers 
@@ -7,7 +12,7 @@ $ python download_numbers
 HTML files will be downloaded to a folder for the specific chrome extension, then every file is read and the number of users reported for each timestamp is printed.
 
 
-# Using existing files
+## Using existing files
 
 Alternatively, you may use the `wayback_machine_downloader` gem to download the files and then run `print_wayback_gem.py`:
 
