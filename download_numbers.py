@@ -21,12 +21,12 @@ def download_files(url):
         url = item.archive_url
         fpath = targetdir / f"{item.timestamp}.snapshot"
         if not os.path.exists(fpath):
-            print(f"Downloading {item}")
+            print(f"Downloading {item}", file=sys.stderr)
             response = requests.get(url)
             with open(fpath, "wb") as f:
                 f.write(response.content)
         else:
-            print(f'Reusing file for snapshot {item.timestamp}')
+            print(f"Reusing file for snapshot {item.timestamp}", file=sys.stderr)
 
 re_user = re.compile(r"UserDownloads:([0-9,\+]+)")
 
@@ -41,7 +41,6 @@ def print_numbers(url):
                 if m is None:
                     print(date, "-")
                     continue
-                # print(m)
                 users = m.replace(',', '')
                 print(date, users)
 
